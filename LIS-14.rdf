@@ -1,0 +1,981 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:lis2="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#"
+    xmlns:lis12="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:obo="http://purl.obolibrary.org/obo/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcmitype="http://purl.org/dc/dcmitype/"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:pav="http://purl.org/pav/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:lis="http://rds.posccaesar.org/ontology/lis14/rdl/">
+  <owl:Ontology rdf:about="http://rds.posccaesar.org/ontology/lis14/ont/core">
+    <owl:versionInfo>Revised 2021-08-05</owl:versionInfo>
+    <dc:rights>Copyright POSC Caesar Association</dc:rights>
+    <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-7167-7321"/>
+    <dcterms:title>PCA 'Part 14' upper ontology</dcterms:title>
+    <rdfs:seeAlso rdf:resource="http://rds.posccaesar.org/ontology/lis14/ont/annotationsPart2"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+    >2021-08-06</dcterms:modified>
+    <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-9736-8316"/>
+    <pav:derivedFrom rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003"/>
+    <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-6228-1317"/>
+    <owl:versionIRI rdf:resource="http://rds.posccaesar.org/ontology/lis14/ont/core/1.0"/>
+    <dcterms:publisher rdf:resource="https://www.posccaesar.org"/>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+    >2021-08-06</dcterms:issued>
+    <rdfs:comment>The POSC Caesar Association (PCA) 'Part 14' upper ontology is an OWL 2 DL rendering of the ISO 15926-2 data model.</rdfs:comment>
+    <pav:lastUpdateOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2021-08-06T12:25:24Z</pav:lastUpdateOn>
+    <rdfs:label>PCA 'Part 14' upper ontology</rdfs:label>
+    <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-5509-8899"/>
+    <dcterms:description>The POSC Caesar Association (PCA) 'Part 14' upper ontology is an OWL 2 DL rendering of the ISO 15926-2 data model.</dcterms:description>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+    <dcterms:creator rdf:resource="https://orcid.org/0000-0002-7167-7321"/>
+  </owl:Ontology>
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:Datatype rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject">
+    <rdfs:label>InformationObject</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/InformationObject"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/InformationContent"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ClassOfInformationObject"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Object"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/RealizableEntity">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
+    <rdfs:label>RealizableEntity</rdfs:label>
+    <rdfs:comment>Inspired by the BFO class "realizable entity" (BFO_0000017).</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Aspect"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/InanimatePhysicalObject">
+    <rdfs:label>InanimatePhysicalObject</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ClassOfInanimatePhysicalObject"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/InanimatePhysicalObject"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Quality">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+    <rdfs:label>Quality</rdfs:label>
+    <rdfs:comment>The class Quality and its subclass PhysicalQuantity inspired by corresponding classes included in the DOLCE and BFO (BFO_0000019) upper ontologies.</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Quantity"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Property"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Aspect"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Compound">
+    <rdfs:label>Compound</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ClassOfCompound"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Compound"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Activity">
+    <rdfs:label>Activity</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Activity"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Activity"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalQuantity">
+    <rdfs:label>PhysicalQuantity</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Property"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/PhysicalQuantity"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Quality"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/ScalarQuantityDatum">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/IAO_0000032"/>
+    <rdfs:label>ScalarQuantityDatum</rdfs:label>
+    <rdfs:comment>A scalar quantity datum has a unique unit of measure and a unique numeric value. This class is inspired by the class "scalar measurement datum" of the Information Artefact Ontology.</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/PhysicalQuantity"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/datumValue"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/UnitOfMeasure"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/datumUOM"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/QuantityDatum"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Role">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    <rdfs:label>Role</rdfs:label>
+    <rdfs:comment>This class is motivated in the Part 2 'role' entity type, and in the same-named BFO class (BFO_0000023). The specific meaning of roles in ISO 15926-2 should be investigated, even though the examples given there are clear enough.</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#RoleAndDomain"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Role"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/RealizableEntity"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Site">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000029"/>
+    <rdfs:label>Site</rdfs:label>
+    <rdfs:comment>This class is inspired by the BFO/Information Artefact Ontology class "site" (BFO_0000029).</rdfs:comment>
+    <rdfs:comment>From BFO: "b is a site means: b is a three-dimensional immaterial entity that is (partially or wholly) bounded by a material entity or it is a three-dimensional immaterial part thereof. (axiom label in BFO2 Reference: [034-002])"</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#SpatialLocation"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#RegionInSpace"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Location"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject">
+    <rdfs:label>PhysicalObject</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/PhysicalObject"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#PhysicalObject"/>
+    <lis:deprecatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/MaterializedPhysicalObject"/>
+    <lis:deprecatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#MaterializedPhysicalObject"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Object"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Aspect">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+    <rdfs:label>Aspect</rdfs:label>
+    <rdfs:comment>There is no direct analogue to Aspect in ISO 15926-2 or ISO 15926-12.</rdfs:comment>
+    <rdfs:comment>The class Aspect is closely related to "specifically dependent continuant" in BFO (BFO_0000020).</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Object">
+    <rdfs:label>Object</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Individual"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#PossibleIndividual"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Function">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+    <rdfs:label>Function</rdfs:label>
+    <rdfs:comment>Inspired by the BFO class "function" (BFO_0000034).</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/FunctionalPhysicalObject"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#FunctionalPhysicalObject"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Disposition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Event">
+    <rdfs:label>Event</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Event"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Event"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Phase">
+    <rdfs:label>Phase</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Phase"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Phase"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/InanimatePhysicalObject"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/FunctionalObject">
+    <skos:example>An item on a Process Flow Diagram (PFD) or Process and Instrumentation Diagram (P&amp;ID) should be classified as a FunctionalObject.</skos:example>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Object"/>
+    <skos:note>A class of artefacts such as Pump is not a subclass of FunctionalObject: a pump that is not in service is not part of a system. However, an individual functional location should in general be given some high-level artefact classification in addition to its description as part of a system.</skos:note>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/System"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/functionalPartOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>A functional object is part of a system, and has a function whose realisation contributes to the performance of the system as a whole.</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/ClassOfPhysicalObjectByFunction"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Function"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasFunction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#FunctionalPhysicalObject"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/FunctionalPhysicalObject"/>
+    <rdfs:label>FunctionalObject</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/QuantityDatum">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+    <rdfs:label>QuantityDatum</rdfs:label>
+    <rdfs:comment>This class is inspired by the class "measurement datum" of the Information Artefact Ontology. The change of wording from "measurement" to "quantity" is intended to support cases where measurement is not involved, such as with nominal values.</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Quantity"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/System">
+    <skos:note>A functional location that does not itself have functional parts is not a system.</skos:note>
+    <rdfs:label>System</rdfs:label>
+    <rdfs:comment>A system is a complex of functional parts working together. Each part contributes to the realisation of the system's function (though not necessarily every part in every performance of the system).</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/FunctionalPhysicalObject"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#FunctionalPhysicalObject"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/FunctionalObject"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasFunctionalPart"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/FunctionalObject"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/PeriodInTime">
+    <rdfs:label>PeriodInTime</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/PeriodInTime"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#PeriodInTime"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Scale">
+    <rdfs:label>Scale</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Scale"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Scale"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/UnitOfMeasure"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/SpatialLocation">
+    <rdfs:label>SpatialLocation</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#SpatialLocation"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#RegionInSpace"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Location"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/PointInSpace">
+    <rdfs:label>PointInSpace</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/PointInSpace"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/SpatialLocation"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/RegionInSpace">
+    <rdfs:label>RegionInSpace</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/RegionInSpace"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/SpatialLocation"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Person">
+    <rdfs:label>Person</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ClassOfPerson"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Person"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Organism"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Organism">
+    <rdfs:label>Organism</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ClassOfOrganism"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Organism"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/PointInTime">
+    <rdfs:label>PointInTime</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/PointInTime"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#PointInTime"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Event"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Feature">
+    <rdfs:label>Feature</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ClassOfFeature"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Feature"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Disposition">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+    <rdfs:label>Disposition</rdfs:label>
+    <rdfs:comment>Inspired by the BFO class "disposition" (BFO_0000016).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/RealizableEntity"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/UnitOfMeasure">
+    <rdfs:label>UnitOfMeasure</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/QuantityMeasure"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Organization">
+    <rdfs:label>Organization</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ClassOfOrganization"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Organization"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Object"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Stream">
+    <rdfs:label>Stream</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/Stream"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Stream"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/InanimatePhysicalObject"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Location">
+    <rdfs:label>Location</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/RegionInSpace"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#SpatialLocation"/>
+    <rdfs:subClassOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Object"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/qualityQuantifiedAs">
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#PropertyQuantification"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/QuantityDatum"/>
+    <rdfs:comment>This relation is inspired by the relation "is quality measured as" of the Information Artefact Ontology. The term "quantified" replaces "measured" to support cases where measurement is not involved, as in e.g. estimates.</rdfs:comment>
+    <rdfs:label>qualityQuantifiedAs</rdfs:label>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Quality"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/QuantityMeasure"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/representedIn"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/quantifiesQuality"/>
+    </owl:inverseOf>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/PhysicalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/createdBy">
+    <rdfs:label>createdBy</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ClassOfCauseOfBeginningOfClassOfIndividual"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/hasCauseOfBeginning"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/creates"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasEnding">
+    <rdfs:label>hasEnding</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/hasEnd"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Ending"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasActivityBound"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/residesIn">
+    <rdfs:label>residesIn</rdfs:label>
+    <rdfs:comment>x residesIn y if x is a physical object that is located in the location y.</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/locatedRelativeTo"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#RelativeLocation"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Location"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/locatedRelativeTo"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasQuality">
+    <rdfs:label>hasQuality</rdfs:label>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Quality"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/qualityOf"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasFeature">
+    <rdfs:label>hasFeature</rdfs:label>
+    <rdfs:comment>Example of usage: stating that an entity has a surface suitable for connection, such as a flange face.</rdfs:comment>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/hasFeature"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#FeatureWholePart"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasArrangedPart"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasSubLocation">
+    <rdfs:label>hasSubLocation</rdfs:label>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Location"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Location"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/subLocationOf"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasPart"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasPart">
+    <rdfs:label>hasPart</rdfs:label>
+    <lis:equivalentEntityISO15926>CompositionOfIndividual</lis:equivalentEntityISO15926>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/hasPart"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/partOf"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/installedAs">
+    <rdfs:label>installedAs</rdfs:label>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/FunctionalObject"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/partOf">
+    <rdfs:label>partOf</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/partOf"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#CompositionOfIndividual"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/realizes">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+    <rdfs:label>realizes</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/functionalPartOf">
+    <rdfs:label>functionalPartOf</rdfs:label>
+    <rdfs:comment>Used to capture the functional break-down of a system. Where x is a functional part of a system y, the realisation of one or more functions of x contributes to the performance of y.</rdfs:comment>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/System"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/FunctionalObject"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasFunctionalPart"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/partOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasAssembledPart">
+    <rdfs:label>hasAssembledPart</rdfs:label>
+    <rdfs:comment>This is the recommended (super-) relation for capturing physical breakdown of mechanical assemblies.</rdfs:comment>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/hasAssembledPart"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#AssemblyOfIndividual"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasArrangedPart"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/interestOf">
+    <rdfs:label>interestOf</rdfs:label>
+    <rdfs:comment>Derived from "LifecycleStage" of Part 2, this is a superproperty suitable for various intentional relationships, such as planning, approving, or ordering. The Part 2 name "lifecycle stage" is likely to confuse, but the intended use of this type is clear enough from this Part 2 annotation to ClassOfLifecycleStage: "EXAMPLE Planned, required, expected, and proposed can be represented by instances of [class_of_lifecycle_stage]."</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#LifecycleStage"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/causes">
+    <rdfs:label>causes</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/causes"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#CauseOfEvent"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/before"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/ends">
+    <rdfs:label>ends</rdfs:label>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasEnding"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/activityBoundOf"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/representedIn">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+    <rdfs:label>representedIn</rdfs:label>
+    <rdfs:comment>Also see "is about" IAO_0000136 of the Information Artifact Ontology, which may be better named for a maximally general relation of "aboutness" (but note that "is about" goes in the opposite direction of "representedIn").</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/representationByInformationObject"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#RepresentationOfThing"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/representedBy">
+    <rdfs:label>representedBy</rdfs:label>
+    <rdfs:comment>In Part 2, this is the top level relation from things to information objects. For this Part, we introduce representedIn, as the more generic inverse of isAbout.</rdfs:comment>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/representationByInformationObject"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#RepresentationOfThing"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/represents"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/representedIn"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasResident">
+    <rdfs:label>hasResident</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/locatedRelativeTo"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#RelativeLocation"/>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/residesIn"/>
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/locatedRelativeTo"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/featureOf">
+    <rdfs:label>featureOf</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/featureOf"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#FeatureWholePart"/>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasFeature"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/arrangedPartOf"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/concretizedBy">
+    <rdfs:label>concretizedBy</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/InformationObject"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/concretizes"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/dispositionOf">
+    <rdfs:label>dispositionOf</rdfs:label>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasDisposition"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/quantifiesQuality">
+    <rdfs:label>quantifiesQuality</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/representationByInformationObject"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#RepresentationOfThing"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/isAbout"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/approvedBy">
+    <rdfs:label>approvedBy</rdfs:label>
+    <rdfs:comment>Relation for stating that some item or activity was approved by an entity, typically a person or an organisation.</rdfs:comment>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Approval"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/approves"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/interestOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasFunctionalPart">
+    <rdfs:label>hasFunctionalPart</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasPart"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/isAbout">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+    <rdfs:label>isAbout</rdfs:label>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/representedIn"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/participantIn">
+    <rdfs:label>participantIn</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/participantIn"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Participation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasPhysicalQuantity">
+    <rdfs:label>hasPhysicalQuantity</rdfs:label>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalQuantity"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/physicalQuantityOf"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasQuality"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/qualityOf">
+    <rdfs:label>qualityOf</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/represents">
+    <rdfs:label>represents</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/representationByInformationObject"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#RepresentationOfThing"/>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/isAbout"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasActivityBound">
+    <rdfs:label>hasActivityBound</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/hasTemporalBound"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#TemporalBounding"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasActivityPart"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasRole">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+    <rdfs:label>hasRole</rdfs:label>
+    <rdfs:comment>Inspired by BFO's "has role" (RO_0000087)</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Role"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Role"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/roleOf"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasDisposition">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/RO_0000091"/>
+    <rdfs:label>hasDisposition</rdfs:label>
+    <rdfs:comment>Inspired by BFO's "has disposition" (RO_0000091).</rdfs:comment>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Disposition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasInterestIn">
+    <rdfs:label>hasInterestIn</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#LifecycleStage"/>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/interestOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/subLocationOf">
+    <rdfs:label>subLocationOf</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/partOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasFunction">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/RO_0000085"/>
+    <rdfs:label>hasFunction</rdfs:label>
+    <rdfs:comment>Inspired by BFO's "has function" (RO_0000085).</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/FunctionalPhysicalObject"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#FunctionalPhysicalObject"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Function"/>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasDisposition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasParticipant">
+    <rdfs:label>hasParticipant</rdfs:label>
+    <rdfs:comment>This is the recommended superrelation for types of participation by entities in activities -- the agent, the matter being acted upon, etc.</rdfs:comment>
+    <rdfs:comment>Note that BFO does not have 'has participant' as a subrelation of 'has part'. This can be motivated in that 4D objects, here members of Activity, are at least not obviously able to have 3D parts.</rdfs:comment>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/hasParticipant"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Participation"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/participantIn"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/roleOf">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+    <rdfs:label>roleOf</rdfs:label>
+    <rdfs:comment>Inspired by BFO's "role of" (RO_0000081)</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Role"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/approves">
+    <rdfs:label>approves</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Approval"/>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasInterestIn"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/contains">
+    <rdfs:label>contains</rdfs:label>
+    <rdfs:comment>For the DL profile, we restrict this relation to physical objects. Note that this rules out using "lis:contains" for spatial locations.</rdfs:comment>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/contains"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ContainmentOfIndividual"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/locatedRelativeTo"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasBeginning">
+    <rdfs:label>hasBeginning</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/hasBeginning"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Beginning"/>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasActivityBound"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/causedBy">
+    <rdfs:label>causedBy</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/causes"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#CauseOfEvent"/>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/causes"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/after"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/realizedIn">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+    <rdfs:label>realizedIn</rdfs:label>
+    <rdfs:comment>Inspired by BFO's "realized in" (BFO_0000054)</rdfs:comment>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/RealizableEntity"/>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/realizes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/assembledPartOf">
+    <rdfs:label>assembledPartOf</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/assembledPartOf"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#AssemblyOfIndividual"/>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasAssembledPart"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/arrangedPartOf"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/activityBoundOf">
+    <rdfs:label>activityBoundOf</rdfs:label>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasActivityBound"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/activityPartOf"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/concretizes">
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/RO_0000059"/>
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000164"/>
+    <rdfs:label>concretizes</rdfs:label>
+    <rdfs:comment>TODO. Consider splitting this into two relations, one concretizesInFeature and another concretizesInActivity, to avoid a disjunctive domain.</rdfs:comment>
+    <rdfs:comment>Inspired by BFO's "concretizes". Note that the ISO 15926-14 definition diverges slightly from that in BFO, mainly in employing Feature where BFO has "specifically dependent continuant".</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/InformationObject"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+          <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Feature"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/functionOf">
+    <rdfs:label>functionOf</rdfs:label>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasFunction"/>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/dispositionOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/containedBy">
+    <rdfs:label>containedBy</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/containedBy"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ContainmentOfIndividual"/>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/contains"/>
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/locatedRelativeTo"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/begins">
+    <rdfs:label>begins</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/begins"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Beginning"/>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasBeginning"/>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/activityBoundOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/arrangedPartOf">
+    <rdfs:label>arrangedPartOf</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/arrangedPartOf"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ArrangementOfIndividual"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasArrangedPart"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/partOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasActivityPart">
+    <rdfs:label>hasActivityPart</rdfs:label>
+    <lis:relatedEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/hasTemporalPart"/>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#TemporalWholePart"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasPart"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/after">
+    <rdfs:label>after</rdfs:label>
+    <rdfs:comment>Use this relation to state that one activity after before another.</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/before"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/occursRelativeTo"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/physicalQuantityOf">
+    <rdfs:label>physicalQuantityOf</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/qualityOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/activityPartOf">
+    <rdfs:label>activityPartOf</rdfs:label>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasActivityPart"/>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/partOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasInstalled">
+    <rdfs:label>hasInstalled</rdfs:label>
+    <owl:inverseOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/installedAs"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/hasArrangedPart">
+    <rdfs:label>hasArrangedPart</rdfs:label>
+    <rdfs:comment>In line with intended use, for the DL profile this relation has a domain restricted to physical objects.</rdfs:comment>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/hasArrangedPart"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ArrangementOfIndividual"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/hasPart"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/before">
+    <rdfs:label>before</rdfs:label>
+    <rdfs:comment>Use this relation to state that one activity occurs before another.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/occursRelativeTo"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/creates">
+    <rdfs:label>creates</rdfs:label>
+    <rdfs:comment>Use this relation to express that an activity brings a physical object into being. (Derived from class_of_cause_of_beginning_of_class_of_individual in Part 2).</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ClassOfCauseOfBeginningOfClassOfIndividual"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/causesBeginningOf"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/approvedOn">
+    <rdfs:label>approvedOn</rdfs:label>
+    <rdfs:comment>This is a super-property for stating the time that an entity was approved, derived from Part 2 "approval". Introduce sub-properties to match different contexts and types of approval. The range of sub-properties should be xsd:date or xsd:dateTime.</rdfs:comment>
+    <lis:relatedEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#Approval"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/qualityQuantityValue">
+    <rdfs:label>qualityQuantityValue</rdfs:label>
+    <rdfs:comment>This is a super-property for "shortcut" relations that combine a quality, the weak lis:qualityQuantifiedAs, and a unit of measure into a simple data property. For instance, "mass in kilograms" can be introduced as such a data property, for expressing the mass of an entity on the kilogram scale. lis:qualityQuantifiedAs is weak in the sense that it doesn't distinguish between designed or estimated, and measured, values.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/datumValue">
+    <rdfs:label>datumValue</rdfs:label>
+    <rdfs:comment>This relation is inspired by the relation "has measurement value" of the Information Artefact Ontology.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/directlyConnectedTo">
+    <rdfs:label>directlyConnectedTo</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/directlyConnectedTo"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#DirectConnection"/>
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/connectedTo"/>
+    </rdfs:subPropertyOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/locatedRelativeTo">
+    <rdfs:label>locatedRelativeTo</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/locatedRelativeTo"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#RelativeLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/connectedTo">
+    <rdfs:label>connectedTo</rdfs:label>
+    <lis:equivalentEntityISO15926 rdf:resource="http://standards.iso.org/iso/15926/ontology/life-cycle-integration/connectedTo"/>
+    <lis:equivalentEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#ConnectionOfIndividual"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/occursRelativeTo">
+    <rdfs:label>occursRelativeTo</rdfs:label>
+    <rdfs:comment>This relation is introduced for the DL profile as a top relation for various temporal relations between activities (only).</rdfs:comment>
+    <lis:remodelsEntityISO15926 rdf:resource="http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#TemporalSequence"/>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:FunctionalProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/datumUOM">
+    <rdfs:label>datumUOM</rdfs:label>
+    <rdfs:comment>Relation (functional) to assign unit of measure to measurement data. There is no obvious analogue in ISO 15926-2 or ISO 15926-12.</rdfs:comment>
+    <rdfs:range rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/UnitOfMeasure"/>
+    <rdfs:domain rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/QuantityDatum"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/remodelsEntityISO15926">
+    <rdfs:subPropertyOf>
+      <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/remodelsEntity">
+        <rdfs:subPropertyOf>
+          <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/relatedEntity">
+            <rdfs:label>relatedEntity</rdfs:label>
+            <rdfs:comment>Annotation property for referring from OWL ontology resources to entities in external vocabularies (typically, but not necessarily, ontologies), where definitions, examples, or explications of the external entity contribute to understanding and defining the local resource.</rdfs:comment>
+          </owl:AnnotationProperty>
+        </rdfs:subPropertyOf>
+        <rdfs:label>remodelsEntity</rdfs:label>
+        <rdfs:comment>Annotation property for referring from OWL ontology resources to entities in external vocabularies, where the local resource, together with OWL constructs, can express intuitively the same facts as the referenced entity.</rdfs:comment>
+      </owl:AnnotationProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf>
+      <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/relatedEntityISO15926">
+        <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/relatedEntity"/>
+        <skos:example>The Part 14 class Activity is clearly related to, but not equivalent to, the Part 2 entity ClassOfActivity, and this annotation property should be used to record that fact.</skos:example>
+        <rdfs:label>relatedEntityISO15926</rdfs:label>
+        <rdfs:comment>Annotation property for referring from OWL ontology resources in ISO 15926-14 to entities in other parts of ISO 15926, where definitions, examples, or explications of the Part 2 entity contribute to understanding and defining the Part 14 resource.</rdfs:comment>
+      </owl:AnnotationProperty>
+    </rdfs:subPropertyOf>
+    <skos:example>Range restrictions on physical quantities can be captured with OWL and Part 14 using "facet" datatype restrictions. These will correspond to Part 2 Property Range expressions.</skos:example>
+    <rdfs:label>remodelsEntityISO15926</rdfs:label>
+    <rdfs:comment>Annotation property for referring from OWL ontology resources in ISO 15926-14 to entities in other parts of ISO 15926 (primarily Part 2), where the Part 14 entity type, together with OWL constructs, can express intuitively the same facts as the referenced entity.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/pav/derivedFrom">
+    <rdfs:label>derivedFrom</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/pav/"/>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/equivalentEntityISO15926">
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/relatedEntityISO15926"/>
+    <rdfs:subPropertyOf>
+      <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/equivalentEntity">
+        <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/relatedEntity"/>
+        <rdfs:label>equivalentEntity</rdfs:label>
+        <rdfs:comment>Annotation property for referring from OWL ontology resources to entities in external vocabularies, where the local resource is equivalent in meaning to that of the referenced entity.</rdfs:comment>
+      </owl:AnnotationProperty>
+    </rdfs:subPropertyOf>
+    <skos:example>The Part 14 class Activity has, intuitively, the same meaning as the Part 2 entity Activity, and this annotation property should be used to record that fact.</skos:example>
+    <rdfs:label>equivalentEntityISO15926</rdfs:label>
+    <rdfs:comment>Annotation property for referring from ontology resources in ISO 15926-14 to entities in other parts of ISO 15926, where the Part 14 resource is equivalent in meaning to that of the referenced entity.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/transformedFrom">
+    <rdfs:subPropertyOf>
+      <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/originatesFrom">
+        <rdfs:label>originatesFrom</rdfs:label>
+        <rdfs:comment>This is a super-property for associating a resource with a resource it originated from.</rdfs:comment>
+      </owl:AnnotationProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:label>transformedFrom</rdfs:label>
+    <rdfs:comment>This annotation property is used for stating that the current resource originates from another resource by transformation.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description">
+    <rdfs:label>description</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject"/>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Location"/>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Organization"/>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AnnotationProperty rdf:about="http://purl.org/pav/previousVersion">
+    <rdfs:label>previousVersion</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/pav/"/>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/deprecatedEntityISO15926">
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/relatedEntityISO15926"/>
+    <rdfs:subPropertyOf>
+      <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/deprecatedEntity">
+        <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/relatedEntity"/>
+        <rdfs:label>deprecatedEntity</rdfs:label>
+        <rdfs:comment>Annotation property for referring from OWL ontology resources to semantically similar entities in external vocabularies, where the limitations of OWL, as as first-order language, imply that representing the intended meaning of the referenced entity is not feasible.</rdfs:comment>
+      </owl:AnnotationProperty>
+    </rdfs:subPropertyOf>
+    <skos:example>Modal notions can not be captured in OWL. Therefore, Part 2 entities that are essentially modal, such as those referring to "actuality" or "materialization", need to be left out of Part 14.</skos:example>
+    <rdfs:label>deprecatedEntityISO15926</rdfs:label>
+    <rdfs:comment>Annotation property for referring from ontology resources in ISO 15926-14 to semantically similar entities in other parts of ISO 15926 (primarily Part 2), where the limitations of OWL, as as first-order language, imply that Part 14 is not capable of expressing the intended meaning of the referenced entity.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example">
+    <rdfs:label>example</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/2004/02/skos/core</rdfs:isDefinedBy>
+    <rdfs:comment>This SKOS relation replaces the Part 2 "example" attribute.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher">
+    <rdfs:label>publisher</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+    <rdfs:label>altLabel</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/2004/02/skos/core</rdfs:isDefinedBy>
+    <rdfs:comment>Alternative label for the ontology resource.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+    <rdfs:label>prefLabel</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/2004/02/skos/core</rdfs:isDefinedBy>
+    <rdfs:comment>Preferred label for the ontology resource.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights">
+    <rdfs:label>rights</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/pav/createdBy">
+    <rdfs:label>Created by</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/pav/"/>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/isPrimaryTopicOf">
+    <rdfs:label>isPrimaryTopicOf</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note">
+    <rdfs:label>note</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/2004/02/skos/core</rdfs:isDefinedBy>
+    <rdfs:comment>This SKOS relation replaces the Part 2 "description" attribute.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+    <rdfs:label>definition</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/2004/02/skos/core</rdfs:isDefinedBy>
+    <rdfs:comment>This SKOS relation replaces the Part 2 "definition" attribute.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/pav/contributedBy">
+    <rdfs:label>contributedBy</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/pav/"/>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/pav/lastUpdateOn">
+    <rdfs:label>lastUpdateOn</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/pav/"/>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued">
+    <rdfs:label>issued</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/mergedFrom">
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/originatesFrom"/>
+    <rdfs:label>mergedFrom</rdfs:label>
+    <rdfs:comment>This annotation property is used for stating that the current resource originates from one or several other resources by merging.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license">
+    <rdfs:label>license</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title">
+    <rdfs:label>title</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator">
+    <rdfs:label>creator</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor">
+    <rdfs:label>contributor</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/splitFrom">
+    <rdfs:subPropertyOf rdf:resource="http://rds.posccaesar.org/ontology/lis14/rdl/originatesFrom"/>
+    <rdfs:label>splitFrom</rdfs:label>
+    <rdfs:comment>This annotation property is used for stating that the current resource originates from another resource by splitting.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified">
+    <rdfs:label>modified</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Activity"/>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Aspect"/>
+      <owl:Class rdf:about="http://rds.posccaesar.org/ontology/lis14/rdl/Object"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+</rdf:RDF>
